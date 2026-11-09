@@ -57,7 +57,9 @@ export default function (eleventyConfig) {
     return Image.generateHTML(metadata, {
       alt: alt || "",
       sizes,
-      loading: "lazy",
+      // The avatar is above the fold: load it right away; project images stay lazy.
+      loading: cls === "avatar" ? "eager" : "lazy",
+      fetchpriority: cls === "avatar" ? "high" : "auto",
       decoding: "async",
       class: cls,
     });
