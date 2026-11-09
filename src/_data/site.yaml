@@ -1,0 +1,39 @@
+# ─────────────────────────────────────────────────────────────
+#  Site-wide personal details. Drafted from the Master Professional Archive.
+#  Text wrapped in [[double brackets]] is a PLACEHOLDER: it shows
+#  with a dashed outline on the site. Replace it and remove the brackets.
+# ─────────────────────────────────────────────────────────────
+
+name: "Tounou Chanthavongsa"
+role: "Youth Development & AI Literacy Programme Lead"
+tagline: "I design and coordinate youth programmes and AI literacy training in Lao PDR and across Southeast Asia."
+location: "Vientiane, Lao PDR"   # leave empty to hide
+
+# Used for the <title>, search results and link previews (plain text).
+description: "Tounou Chanthavongsa: youth development and AI literacy programme lead in Lao PDR. Selected programmes, full archive and CV."
+
+# Full public URL once published (used for link previews). Leave empty until then.
+url: ""
+
+# Profile photo shown above your name. Put a square-ish photo (at least 400×400 px)
+# at this path; it is resized and optimized automatically. Hidden until the file exists.
+photo: "assets/img/src/profile.jpg"
+photo_alt: "Portrait of Tounou Chanthavongsa"
+
+# Two letters for the browser-tab icon.
+initials: "TC"
+
+# Contact email (public on the site). Leave empty to hide the email icon and "Get in touch".
+email: "noochanthavongsa@gmail.com"
+
+# Put your CV PDF at src/assets/files/cv.pdf. The "Download CV" link appears
+# only when that file actually exists.
+cv_pdf: "assets/files/cv.pdf"
+
+# Social profiles — ONLY the ones you use. Icons appear in this order.
+# network = a Simple Icons slug (https://simpleicons.org), e.g. github, facebook,
+#   instagram, x, behance, youtube. LinkedIn uses src/assets/icons/linkedin.svg.
+socials:
+  - network: linkedin
+    label: LinkedIn
+    url: https://www.linkedin.com/in/tounou-chanthavongsa-72378027b/

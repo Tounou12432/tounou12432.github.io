@@ -1,0 +1,146 @@
+# ─────────────────────────────────────────────────────────────
+#  CV section. Drafted from the Master Professional Archive.
+#  Each section is a list of entries, newest first. To add a section, copy one block.
+#  Entry fields: title, org, url (optional), start, end, summary, highlights[]
+# ─────────────────────────────────────────────────────────────
+
+sections:
+  - heading: "Experience"
+    items:
+      - title: "Intern"
+        org: "Earth Systems, Vientiane Office"
+        start: "Sep 2026"
+        end: "Present"
+        summary: "Supporting environmental and social consulting projects and office operations."
+
+      - title: "AI Project Coordinator and Officer (part-time)"
+        org: "XM Technovator"
+        start: "Jan 2026"
+        end: "Sep 2026"
+        summary: "Coordinated AI and digital transformation programmes, including AI Ready ASEAN and AIM ASEAN."
+        highlights:
+          - "Delivered AI training and prepared training materials"
+          - "Handled stakeholder engagement, beneficiary data, reporting and completion documentation"
+          - "Contributed to the Lao AI Skills Dialogue 2026 and supported project handover"
+
+      - title: "AI Master Trainer and Project Coordinator"
+        org: "AI Ready ASEAN Programme"
+        start: "Oct 2025"
+        end: "Aug 2026"
+        summary: "National AI literacy training for students, educators, parents and communities."
+        highlights:
+          - "Recognised 2nd Place, Outstanding AI Master Trainer in Lao PDR"
+
+      - title: "Project Coordinator and Lead Trainer"
+        org: "AIM ASEAN, Lao PDR implementation"
+        start: "Jan 2025"
+        end: "Sep 2026"
+        summary: "Coordinated a nationwide AI training rollout for MSMEs using a training-of-trainers model."
+
+      - title: "Lead Coordinator and Technical Operations"
+        org: "Young Entrepreneur Squad, American Center Vientiane"
+        start: "May 2025"
+        end: "Sep 2026"
+        summary: "Coordinated mentorship, workshops and technical delivery for a 12-month youth entrepreneurship programme."
+
+      - title: "Project Assistant Intern; earlier Communication Assistant Intern"
+        org: "Promotion of Family Health Association Laos"
+        start: "2023"
+        end: "2025"
+        summary: "Supported reproductive health outreach, youth engagement, training, reporting and the website redesign."
+
+      - title: "Research Interviewer and Interpreter"
+        org: "Zen Research Asia"
+        start: "Nov 2024"
+        end: "Dec 2024"
+        summary: "Conducted field interviews and provided Lao–English interpretation."
+
+      - title: "Graphic Designer and Content Creator"
+        org: "Climax Multimedia"
+        start: "Jun 2023"
+        end: "Jul 2023"
+        summary: "Designed branding and social media materials for visual communication campaigns."
+
+      - title: "Project Manager, Trainer and Communication & IT Specialist"
+        org: "Children's Education and Culture Centre, Vientiane"
+        start: "Aug 2020"
+        end: "Feb 2023"
+        summary: "Designed and managed youth development and cultural programmes, facilitated workshops, mentored volunteers and ran internal IT and communication."
+
+  - heading: "Leadership and advisory roles"
+    items:
+      - title: "Member, first cohort (digital transformation)"
+        org: "Youth Advisory Board to the UN Country Team in Lao PDR"
+        start: "Jul 2026"
+        end: "Jul 2028"
+        summary: "Appointed by the UN Resident Coordinator to the 10-member board advising the UN Country Team on youth priorities."
+
+      - title: "Vice Curator; previously Impact Officer"
+        org: "Global Shapers Community Vientiane Hub"
+        start: "Aug 2025"
+        end: "Present"
+        summary: "Support the Curator on strategy, governance, member engagement and partnerships."
+
+      - title: "Impact Manager"
+        org: "ASEAN Youth Organization, Laos"
+        start: "Oct 2025"
+        end: "Present"
+        summary: "Monitor and evaluate youth initiatives and align local work with regional strategy."
+
+      - title: "Member; Co-Chair in the final term"
+        org: "Young People's Action Team, UNICEF East Asia & Pacific"
+        start: "Dec 2024"
+        end: "Dec 2025"
+        summary: "Facilitated regional youth coordination and co-designed meetings."
+
+      - title: "Founder (currently paused)"
+        org: "Youthempact"
+        start: "Aug 2023"
+        end: ""
+        summary: "Youth-led platform for opportunity mapping, environmental awareness and digital skills."
+
+  - heading: "Education"
+    items:
+      - title: "Bachelor of Community and Rural Development"
+        org: "National University of Laos"
+        start: ""
+        end: "Sep 2026"
+        summary: "GPA 3.55/4.00. Coursework in community development, leadership, social policy and research methods."
+
+      - title: "YSEALI Academic Fellows Program, Natural Resources Management"
+        org: "California State University, Chico, USA"
+        start: "Apr 2025"
+        end: "May 2025"
+        summary: "Selective U.S. exchange on leadership, sustainability and environmental governance."
+
+      - title: "RISE Program, JASSO Scholarship"
+        org: "University of the Ryukyus, Okinawa, Japan"
+        start: "Oct 2023"
+        end: "Sep 2024"
+        summary: "36 credits in Japanese language, international sociology, cultural studies and global leadership."
+
+  - heading: "Awards"
+    items:
+      - title: "2nd Place, Outstanding AI Master Trainer"
+        org: "AI Ready ASEAN Programme, Lao PDR"
+        start: ""
+        end: "2026"
+      - title: "3rd Place, National Student Project Competition"
+        org: "National Symposium on Social Protection, ILO and Oxfam"
+        start: ""
+        end: "2026"
+        summary: "Individual policy proposal on improving social assistance delivery."
+      - title: "Outstanding Laos Representative"
+        org: "Seeds for the Future, ASEAN Foundation and Huawei, China"
+        start: ""
+        end: "2023"
+
+skills:
+  - group: "Programmes"
+    items: ["Grant proposal writing", "Programme design", "Monitoring and reporting", "Stakeholder coordination"]
+  - group: "Training"
+    items: ["AI literacy", "Workshop facilitation", "Youth mentoring", "Training of trainers"]
+  - group: "Digital"
+    items: ["Canva", "Adobe tools", "Microsoft Office", "Google Workspace", "Web content and CMS"]
+  - group: "Languages"
+    items: ["Lao (native)", "Thai (fluent)", "English (upper-intermediate)", "Japanese (pre-intermediate)"]

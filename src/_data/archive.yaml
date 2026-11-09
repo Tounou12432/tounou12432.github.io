@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────────────────────
+#  Full archive page (/archive/). Everything here is listed in the table,
+#  together with the highlight projects from src/projects/.
+#  category must be one of: Programme, Training, Representation, Leadership, Work, Award, Study
+#  Fields: year (used for sorting, e.g. "2026" or "2025–2026"), title, org, role, category, url (optional)
+# ─────────────────────────────────────────────────────────────
+
+- { year: "2026", title: "Asia Pacific Internet Governance Academy (APIGA)", org: "Busan, Republic of Korea", role: "Selected participant", category: Training }
+- { year: "2026", title: "Regional Youth Anti-Corruption Workshop", org: "C4 Center, UNODC and SEA-ACN, Kuala Lumpur", role: "AYO Laos representative", category: Representation }
+- { year: "2026", title: "Joint advocacy event on technology-facilitated gender-based violence", org: "UNDP, UNFPA, UNICEF and the Ministry of Technology and Communications", role: "Youth representative", category: Representation }
+- { year: "2026", title: "EU Global Gateway Youth Consultative Workshop", org: "Delegation of the European Union to Lao PDR", role: "Youth participant", category: Representation }
+- { year: "2026", title: "Training of Trainers on youth-focused social and behaviour change", org: "UNICEF Laos", role: "Sinxay Mentor participant", category: Training }
+- { year: "2026", title: "Regional Forum on Green Issues Reporting in the Digital Era", org: "GAMCIL: CARE International, Lao Journalists' Association, EU", role: "Invited participant", category: Representation }
+- { year: "2026", title: "National Student Project Competition", org: "ILO and Oxfam", role: "3rd place", category: Award }
+- { year: "2026", title: "Outstanding AI Master Trainer", org: "AI Ready ASEAN, Lao PDR", role: "2nd place", category: Award }
+- { year: "2025–2026", title: "Young Entrepreneur Squad", org: "American Center Vientiane", role: "Lead Coordinator and Technical Operations", category: Work }
+- { year: "2025–present", title: "Global Shapers Community Vientiane Hub", org: "World Economic Forum initiative", role: "Vice Curator", category: Leadership }
+- { year: "2025–present", title: "ASEAN Youth Organization, Laos", org: "ASEAN Youth Organization", role: "Impact Manager", category: Leadership }
+- { year: "2025", title: "JSA-ASEAN Biennial Conference", org: "Lao PDR", role: "Organising team member", category: Programme }
+- { year: "2025", title: "Youth Network on Drugs Prevention Program", org: "Cambodia and Thailand", role: "Laos representative", category: Representation }
+- { year: "2025", title: "YSEALI Academic Fellows Program", org: "California State University, Chico", role: "Fellow", category: Study }
+- { year: "2025", title: "Digital and green media capacity building", org: "GAMCIL: CARE International and Lao Journalists' Association", role: "Trainee", category: Training }
+- { year: "2024–2025", title: "Young People's Action Team", org: "UNICEF East Asia & Pacific", role: "Member; Co-Chair in final term", category: Leadership }
+- { year: "2024–2025", title: "Young Money Mind", org: "Youth micro-grant project", role: "Project Lead; financial literacy workshop for 50 students", category: Programme }
+- { year: "2024", title: "Model ASEAN Meeting Plus Australia", org: "ASEAN Foundation, Indonesia", role: "Laos representative", category: Representation }
+- { year: "2024", title: "Field research", org: "Zen Research Asia", role: "Research interviewer and interpreter", category: Work }
+- { year: "2023–2024", title: "RISE Program, JASSO Scholarship", org: "University of the Ryukyus, Japan", role: "Exchange student", category: Study }
+- { year: "2023–2025", title: "Reproductive health outreach and communication", org: "Promotion of Family Health Association Laos", role: "Communication, then project assistant intern", category: Work }
+- { year: "2023", title: "Seeds for the Future", org: "ASEAN Foundation and Huawei, China", role: "Outstanding Laos Representative", category: Award }
+- { year: "2023", title: "Branding and social media design", org: "Climax Multimedia", role: "Graphic designer", category: Work }
+- { year: "2023", title: "Youthempact", org: "Youth-led platform", role: "Founder", category: Leadership }
+- { year: "2022–2023", title: "Community environmental campaigns", org: "Community Learning Center, Vientiane", role: "Project Lead; two EU micro-grants, 600+ people engaged at the That Luang Festival", category: Programme }
+- { year: "2021–2023", title: "Rural community outreach projects", org: "Volunteers House Group, Vientiane", role: "Project Lead and Coordinator", category: Programme }
+- { year: "2020–2023", title: "Youth education and cultural programmes", org: "Children's Education and Culture Centre", role: "Project Manager and Trainer", category: Work }

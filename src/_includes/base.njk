@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set pageTitle = (title ~ " — " ~ site.name) if title else (site.name ~ " — " ~ site.role) %}
+  {%- set pageTitle = pageTitle | replace("[[", "") | replace("]]", "") %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="theme-color" content="#0b1424">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ site.description }}">
+  {%- if site.url %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {%- endif %}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <div class="spotlight" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
+  {{ content | safe }}
+</body>
+</html>

@@ -1,0 +1,36 @@
+{#- One project in the Projects list. Expects `p` (a collections.projects item). -#}
+{%- set d = p.data %}
+{%- set href = p.url if d.detail_page else (d.links[0].url if d.links and d.links.length else "") %}
+<li class="entry project reveal">
+  <div class="entry-date">
+    {%- if d.thumbnail %}{% thumbnail d.thumbnail, d.thumbnail_alt %}{% endif %}
+    <span class="entry-year">{{ d.year }}</span>
+    {%- if d.type %}<span class="entry-type">{{ d.type }}</span>{% endif %}
+  </div>
+  <div class="entry-body">
+    <h3 class="entry-title">
+      {%- if href %}
+      {%- set arrow = "arrow-right" if d.detail_page else "arrow-up-right" %}
+      <a href="{{ href }}">{{ d.title }}{% icon arrow, "icon icon-inline" %}</a>
+      {%- else %}
+      {{ d.title }}
+      {%- endif %}
+    </h3>
+    {%- if d.org %}<p class="entry-org">{{ d.org }}</p>{% endif %}
+    {%- if d.summary %}<p>{{ d.summary }}</p>{% endif %}
+    {%- if d.contribution %}<p class="entry-role">{{ d.contribution }}</p>{% endif %}
+    {%- if d.results and d.results.length %}
+    <ul class="bullets results" aria-label="Results">{% for r in d.results %}<li>{{ r }}</li>{% endfor %}</ul>
+    {%- endif %}
+    {%- if d.links and d.links.length > (0 if d.detail_page else 1) %}
+    <ul class="link-row">
+      {%- for l in d.links %}{% if d.detail_page or not loop.first %}
+      <li><a class="text-link" href="{{ l.url }}">{% icon "link" %}<span>{{ l.label }}</span></a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+    {%- endif %}
+    {%- if d.topics and d.topics.length %}
+    <ul class="chips" aria-label="Topics">{% for t in d.topics %}<li>{{ t }}</li>{% endfor %}</ul>
+    {%- endif %}
+  </div>
+</li>

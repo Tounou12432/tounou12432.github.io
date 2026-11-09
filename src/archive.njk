@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Archive
+permalink: /archive/
+---
+{#- Full archive: highlight projects + src/_data/archive.yaml. Filter buttons need JS; without it all rows show. -#}
+{%- set categories = ["Programme", "Training", "Representation", "Leadership", "Work", "Award", "Study"] %}
+<div class="archive">
+  <a class="text-link back-link" href="/#projects">{% icon "arrow-left" %}<span>{{ site.name }}</span></a>
+  <main id="content" tabindex="-1">
+    <h1 class="archive-title">Archive</h1>
+    <p class="lead">Every programme, role, representation and award, newest first. Highlighted rows are covered in more detail on the home page.</p>
+
+    <div class="filters" role="group" aria-label="Filter by type" hidden>
+      <button type="button" aria-pressed="true" data-filter="all">All</button>
+      {%- for c in categories %}
+      <button type="button" aria-pressed="false" data-filter="{{ c }}">{{ c }}</button>
+      {%- endfor %}
+    </div>
+    <p class="archive-count muted" aria-live="polite"></p>
+
+    <table class="archive-table">
+      <thead>
+        <tr><th scope="col">Year</th><th scope="col">Work</th><th scope="col" class="col-type">Type</th></tr>
+      </thead>
+      <tbody>
+        {%- for r in collections.archiveRows %}
+        <tr data-category="{{ r.category }}"{% if r.highlight %} class="is-highlight"{% endif %}>
+          <td class="cell-year">{{ r.year }}</td>
+          <td>
+            <span class="cell-title">{% if r.url %}<a href="{{ r.url }}">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</span>
+            {%- if r.role %}<span class="cell-role">{{ r.role }}</span>{% endif %}
+            {%- if r.org %}<span class="cell-org">{{ r.org }}</span>{% endif %}
+          </td>
+          <td class="col-type"><span class="cell-type">{{ r.category }}</span></td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </main>
+</div>
