@@ -48,6 +48,8 @@ if (!calm && "IntersectionObserver" in window) {
     .filter(Boolean);
   if (!sections.length) return;
 
+  const scene = document.querySelector(".scene");
+  const root = document.documentElement;
   let current = "";
   const setActive = (id) => {
     if (id === current) return;
@@ -58,16 +60,39 @@ if (!calm && "IntersectionObserver" in window) {
       if (on) a.setAttribute("aria-current", "true");
       else a.removeAttribute("aria-current");
     }
+    if (scene) scene.dataset.active = id;
   };
 
+  const clamp = (n) => Math.min(1, Math.max(0, n));
   const update = () => {
-    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-    if (atBottom) return setActive(sections.at(-1).id);
+    const atBottom = window.innerHeight + window.scrollY >= root.scrollHeight - 2;
     const line = window.innerHeight * 0.3;
     let active = sections[0].id;
-    for (const s of sections) if (s.getBoundingClientRect().top <= line) active = s.id;
+    const progress = {};
+    for (const s of sections) {
+      const r = s.getBoundingClientRect();
+      if (r.top <= line) active = s.id;
+      progress[s.id] = atBottom ? 1 : clamp((line - r.top) / Math.max(r.height, 1));
+    }
+    if (atBottom) active = sections.at(-1).id;
     setActive(active);
+
+    // Reading progress on each nav line, and how much of the current scene is drawn.
+    for (const a of links) a.style.setProperty("--p", progress[a.hash.slice(1)].toFixed(3));
+    if (scene) scene.style.setProperty("--draw", calm ? 1 : clamp(0.15 + progress[active] / 0.55).toFixed(3));
+    root.classList.toggle("is-compact", window.scrollY > 80);
   };
+
+  // Short screens: if the left column overflows even at the top, fold the location and contact
+  // sentence so the social icons stay visible. Measured on load/resize only, to avoid flicker.
+  const intro = document.querySelector(".intro");
+  const fit = () => {
+    if (!intro) return;
+    root.classList.remove("is-tight");
+    if (intro.scrollHeight > intro.clientHeight + 1) root.classList.add("is-tight");
+  };
+  fit();
+  window.addEventListener("resize", fit, { passive: true });
 
   let queued = false;
   const onScroll = () => {

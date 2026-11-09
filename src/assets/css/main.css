@@ -270,10 +270,33 @@ main { padding-bottom: 4rem; }
     padding: 0.35rem 0;
     color: var(--muted); font-weight: 500;
   }
-  .nav-line { display: block; width: 2rem; height: 1px; background: currentColor; }
+  /* Nav line = reading progress: main.js sets --p (0 to 1) per section; the teal fill grows with it. */
+  .nav-line { position: relative; display: block; width: 2rem; height: 2px; border-radius: 2px; background: rgb(164 178 198 / 0.35); overflow: hidden; }
+  .nav-fill { position: absolute; inset: 0 auto 0 0; width: calc(var(--p, 0) * 100%); background: var(--accent); }
+  .nav-desktop a:not(.is-active) .nav-fill { opacity: 0.45; }
   .nav-desktop a:hover, .nav-desktop a.is-active { color: var(--text-strong); }
-  .nav-desktop a.is-active .nav-line { background: var(--accent); }
   .nav-desktop a:hover .nav-line, .nav-desktop a.is-active .nav-line { width: 4rem; }
+
+  /* Scroll-drawn Lao scenes fill the free space between nav and contact. */
+  .scene { display: flex; flex: 1 1 auto; min-height: 0; align-items: center; container-type: size; }
+  .scene-stack { position: relative; width: 100%; max-width: 22rem; height: calc(100% - 1.5rem); max-height: 17rem; }
+  .scene-item { position: absolute; inset: 0; margin: 0; display: flex; flex-direction: column; justify-content: center; visibility: hidden; opacity: 0; }
+  .scene[data-active="about"] [data-scene="about"],
+  .scene[data-active="projects"] [data-scene="projects"],
+  .scene[data-active="cv"] [data-scene="cv"] { visibility: visible; opacity: 1; }
+  .scene svg { width: 100%; height: auto; max-height: calc(100% - 1.75rem); fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; overflow: visible; }
+  .scene path { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--draw, 1)); vector-effect: non-scaling-stroke; }
+  .scene figcaption { margin-top: 0.5rem; color: var(--muted); font-size: 0.8125rem; }
+  @container (max-height: 7rem) { .scene-stack { display: none; } }
+
+  /* Compact state after scrolling past the top: everything in the column stays in view. */
+  .fold { max-height: 8rem; overflow: hidden; }
+  .is-tight .intro .location, .is-tight .intro .contact-text,
+  .is-compact .intro .fold { max-height: 0; opacity: 0; margin-top: 0; margin-bottom: 0; }
+  .is-compact .intro .avatar { width: 3.5rem; height: 3.5rem; margin-bottom: 0.75rem; box-shadow: 0 0 0 3px var(--gold-soft); }
+  .is-compact .intro .name { font-size: 2rem; }
+  .is-compact .intro .role { margin-top: 0.5rem; font-size: 1rem; }
+  .is-compact .nav-desktop { margin-top: 1.25rem; }
   main { padding: 6rem 0; }
   .section { padding-top: 0; margin-bottom: 7rem; scroll-margin-top: 6rem; }
   .entries { gap: 0.25rem; }
@@ -281,11 +304,8 @@ main { padding-bottom: 4rem; }
   .project:hover, .project:focus-within { background: var(--surface); }
 }
 
-/* Very short desktop windows: let the left column scroll with the page instead of clipping it. */
-@media (min-width: 64rem) and (max-height: 820px) {
-  .intro { position: static; height: auto; align-self: start; justify-content: flex-start; }
-  .intro .contact { margin-top: 2rem; }
-}
+/* Scenes are a desktop feature; mobile already has the sticky tab bar. */
+@media (max-width: 63.99rem) { .scene { display: none; } }
 
 /* ── Motion: only when the visitor hasn't asked for less ── */
 @media (prefers-reduced-motion: no-preference) {
@@ -294,6 +314,9 @@ main { padding-bottom: 4rem; }
     transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, width 240ms var(--ease-out), transform 160ms ease;
   }
   .socials a:hover { transform: translateY(-2px); }
+  .fold, .avatar, .name, .role, .nav-desktop { transition: max-height 400ms var(--ease-out), opacity 300ms ease, margin 400ms var(--ease-out), width 400ms var(--ease-out), height 400ms var(--ease-out), font-size 400ms var(--ease-out); }
+  .scene-item { transition: opacity 500ms ease, visibility 500ms; }
+  .nav-fill { transition: width 120ms linear; }
   .entry-title a:hover .icon-inline { transform: translate(2px, -2px); }
   .text-link:hover .icon { transform: translateX(2px); transition: transform 160ms ease; }
 

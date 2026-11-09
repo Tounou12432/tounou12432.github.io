@@ -15,19 +15,21 @@ permalink: /
       {%- endif %}
       <h1 class="name"><a href="/">{{ site.name }}</a></h1>
       <p class="role">{{ site.role }}</p>
-      <p class="tagline">{{ site.tagline }}</p>
+      <p class="tagline fold">{{ site.tagline }}</p>
       {%- if site.location %}
-      <p class="location">{% icon "map-pin" %}<span>{{ site.location }}</span></p>
+      <p class="location fold">{% icon "map-pin" %}<span>{{ site.location }}</span></p>
       {%- endif %}
 
       <nav class="nav nav-desktop" aria-label="Sections">
         <ul>
           {%- for s in sections %}
-          <li><a href="#{{ s.id }}" data-nav><span class="nav-line" aria-hidden="true"></span>{{ s.label }}</a></li>
+          <li><a href="#{{ s.id }}" data-nav><span class="nav-line" aria-hidden="true"><span class="nav-fill"></span></span>{{ s.label }}</a></li>
           {%- endfor %}
         </ul>
       </nav>
     </div>
+
+    {% include "scene.njk" %}
 
     {% include "contact.njk" %}
   </header>
@@ -102,7 +104,7 @@ permalink: /
     </section>
 
     <footer class="site-footer">
-      <p>Built with <a href="https://www.11ty.dev/">Eleventy</a> and hosted on GitHub Pages. Layout inspired by <a href="https://brittanychiang.com/">Brittany Chiang</a>.</p>
+      <p>Designed and built by {{ site.name }} in Vientiane, Lao PDR. Made with <a href="https://www.11ty.dev/">Eleventy</a> and hosted on GitHub Pages.</p>
     </footer>
   </main>
 </div>

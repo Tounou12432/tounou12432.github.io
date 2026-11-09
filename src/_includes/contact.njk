@@ -1,7 +1,7 @@
 {#- "Get in touch" block + social icon row, bottom of the left column. Shows only what site.yaml supplies. -#}
 <div class="contact">
   {%- if site.email %}
-  <p class="contact-text">Open to conversations about new work. <a class="text-link" href="mailto:{{ site.email }}">Get in touch</a></p>
+  <p class="contact-text fold">Open to conversations about new work. <a class="text-link" href="mailto:{{ site.email }}">Get in touch</a></p>
   {%- else %}
   <p class="contact-text hint">[[Add your email in src/_data/site.yaml to show a “Get in touch” link and email icon]]</p>
   {%- endif %}

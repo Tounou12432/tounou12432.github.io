@@ -1,0 +1,45 @@
+{#- Left-column line drawings, one per section. main.js shows the scene for the section in view
+    and draws it as you scroll (--draw: 0 to 1). Without JS, the About scene shows fully drawn. -#}
+<div class="scene" data-active="about">
+  <div class="scene-stack">
+    <figure class="scene-item" data-scene="about">
+      <svg viewBox="0 0 320 200" role="img" aria-labelledby="scene-about-cap">
+        <path pathLength="1" d="M0 180H320"/>
+        <path pathLength="1" d="M20 180V170H220V180M34 170V160H206V170M86 160V151H154V160"/>
+        <path pathLength="1" d="M42 160L46 149L50 160M58 160L62 149L66 160M74 160L78 149L82 160M158 160L162 149L166 160M174 160L178 149L182 160M190 160L194 149L198 160"/>
+        <path pathLength="1" d="M92 151C92 128 148 128 148 151M110 133V124H130V133"/>
+        <path pathLength="1" d="M112 124C114 100 118 74 120 46C122 74 126 100 128 124M120 46V38M117 35a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
+        <path pathLength="1" d="M256 140a6 6 0 1 0 12 0a6 6 0 1 0 -12 0M262 146V164M262 164L256 180M262 164L268 180M262 152L252 140M262 152L276 158"/>
+        <path pathLength="1" d="M284 140a6 6 0 1 0 12 0a6 6 0 1 0 -12 0M290 146V164M290 164L284 180M290 164L296 180M290 152L276 158M290 152L300 160"/>
+      </svg>
+      <figcaption id="scene-about-cap">Pha That Luang, Vientiane</figcaption>
+    </figure>
+
+    <figure class="scene-item" data-scene="projects">
+      <svg viewBox="0 0 320 200" role="img" aria-labelledby="scene-projects-cap">
+        <path pathLength="1" d="M0 180H320"/>
+        <path pathLength="1" d="M70 180V110H190V180M108 180V140C108 118 152 118 152 140V180M64 110H196"/>
+        <path pathLength="1" d="M80 110V98H180V110M118 98V82H142V98M122 82L130 60L138 82"/>
+        <path pathLength="1" d="M88 98L92 86L96 98M164 98L168 86L172 98M74 110L78 100L82 110M178 110L182 100L186 110"/>
+        <path pathLength="1" d="M236 150V118H294V150M228 150H302L308 158H222Z"/>
+        <path pathLength="1" d="M252 128L247 134L252 140M278 128L283 134L278 140M262 142L268 126"/>
+        <path pathLength="1" d="M259 109Q265 104 271 109M252 103Q265 93 278 103M245 97Q265 82 285 97"/>
+        <path pathLength="1" d="M130 60Q190 30 250 70"/>
+      </svg>
+      <figcaption id="scene-projects-cap">Patuxai, and the digital work around it</figcaption>
+    </figure>
+
+    <figure class="scene-item" data-scene="cv">
+      <svg viewBox="0 0 320 200" role="img" aria-labelledby="scene-cv-cap">
+        <path pathLength="1" d="M0 120L40 82L70 104L110 60L150 98L180 80L220 120M200 120L240 76L280 104L320 84"/>
+        <path pathLength="1" d="M250 50a12 12 0 1 0 24 0a12 12 0 1 0 -24 0"/>
+        <path pathLength="1" d="M0 146C40 136 80 156 120 146S200 136 240 146S300 156 320 146"/>
+        <path pathLength="1" d="M0 160C40 150 80 170 120 160S200 150 240 160S300 170 320 160"/>
+        <path pathLength="1" d="M0 194H320"/>
+        <path pathLength="1" d="M40 194V182M28 184Q40 160 52 184ZM72 194V184M62 186Q72 166 82 186ZM284 194V182M272 184Q284 160 296 184Z"/>
+        <path pathLength="1" d="M140 192L136 182M140 192V180M140 192L144 182M162 192L158 182M162 192V180M162 192L166 182M184 192L180 182M184 192V180M184 192L188 182M206 192L202 182M206 192V180M206 192L210 182"/>
+      </svg>
+      <figcaption id="scene-cv-cap">The Mekong, rice fields and forest</figcaption>
+    </figure>
+  </div>
+</div>
