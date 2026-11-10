@@ -13,7 +13,7 @@ permalink: /
       {%- if site.photo | fileExists %}
       {% thumbnail site.photo, site.photo_alt or ("Photo of " ~ site.name), "128px", "avatar" %}
       {%- endif %}
-      <h1 class="name"><a href="/">{{ site.name }}</a></h1>
+      <h1 class="name"><a href="/">{{ site.name }}{% if site.nickname %} <span class="nick">({{ site.nickname }})</span>{% endif %}</a></h1>
       <p class="role">{{ site.role }}</p>
       <p class="tagline fold">{{ site.tagline }}</p>
       {%- if site.location %}
@@ -104,7 +104,7 @@ permalink: /
     </section>
 
     <footer class="site-footer">
-      <p>Designed and built by {{ site.name }} in Vientiane, Lao PDR. Made with <a href="https://www.11ty.dev/">Eleventy</a> and hosted on GitHub Pages.</p>
+      <p>Designed and built by {{ site.name }} in Vientiane, Lao PDR.</p>
     </footer>
   </main>
 </div>

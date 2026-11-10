@@ -5,6 +5,7 @@
 # ─────────────────────────────────────────────────────────────
 
 name: "Tounou Chanthavongsa"
+nickname: "Tanu"            # shown after your name; leave empty to hide
 role: "Youth Development & AI Literacy Programme Lead"
 tagline: "I design and coordinate youth programmes and AI literacy training in Lao PDR and across Southeast Asia."
 location: "Vientiane, Lao PDR"   # leave empty to hide

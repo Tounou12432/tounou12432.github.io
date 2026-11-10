@@ -64,3 +64,11 @@ To test the project-site paths locally, build with a prefix:
 ```bash
 PATH_PREFIX=/portfolio/ npm test
 ```
+
+## Image credits
+
+The landmark outlines in the left column (`src/_includes/scene.njk`) were traced from photos:
+
+- Pha That Luang: "Pha That Luang, July 2023" on Wikimedia Commons, CC0.
+- Patuxai: "ประตูชัย (กำแพงนครเวียงจันทน์) - panoramio" by มะเดื่อ แสลงหลวง on Wikimedia Commons, [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). The credit also appears in the scene caption, as the licence requires.
+- Vang Vieng: "Nam song river vang vieng" on Wikimedia Commons, public domain.
