@@ -20,6 +20,7 @@ All content lives in `src/`. You never need to touch the layout files to change 
 |---|---|
 | Name, title, tagline, location, email, social links, CV path | `src/_data/site.yaml` |
 | About section (Markdown) | `src/content/about.md` |
+| Three key facts above About | `key_facts` in `src/_data/site.yaml` |
 | Projects, one file per project | `src/projects/*.md` |
 | CV sections (experience, leadership, education, awards) and skills | `src/_data/cv.yaml` |
 | Full archive page (`/archive/`), extra rows | `src/_data/archive.yaml` |
