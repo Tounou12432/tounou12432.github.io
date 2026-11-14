@@ -198,6 +198,7 @@ main { padding-bottom: 4rem; }
 .site-footer { margin-top: 5rem; font-size: 0.875rem; color: var(--muted); max-width: 30rem; }
 .site-footer a { color: var(--text); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
 .site-footer a:hover { color: var(--accent); }
+.site-footer .credit { font-size: 0.75rem; margin: 0; }
 
 /* ── Detail + archive pages ─────────────────────────────── */
 .detail, .archive { position: relative; margin: 0 auto; padding: 3rem var(--gutter) 5rem; }
