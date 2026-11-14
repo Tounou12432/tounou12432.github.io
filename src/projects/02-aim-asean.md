@@ -13,5 +13,5 @@ topics: ["AI for business", "Training of trainers", "Localisation"]
 thumbnail: ""
 thumbnail_alt: ""
 links: []
-detail_page: false
+detail_page: true
 ---

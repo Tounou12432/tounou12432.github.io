@@ -98,6 +98,7 @@ main { padding-bottom: 4rem; }
 .role {
   font-family: var(--font-display);
   color: var(--gold);
+  text-wrap: balance;
   font-size: 1.125rem; font-weight: 600; line-height: 1.35;
   margin: 1rem 0 0; max-width: 24rem;
 }
@@ -167,7 +168,11 @@ main { padding-bottom: 4rem; }
 .entries { display: grid; gap: 0.5rem; }
 .entry { display: grid; gap: 0.5rem; padding: 1rem 0; }
 .entry-date { display: flex; flex-direction: column; gap: 0.25rem; color: var(--muted); font-size: 0.875rem; margin: 0.2rem 0 0; }
+/* Years in the display face: Atkinson draws a slashed zero that reads like "2Ø26". */
+.entry-year, .entry-date, .cell-year, .detail-meta { font-family: var(--font-display); }
 .entry-year { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
+.socials a.cv-link { display: inline-flex; align-items: center; width: auto; gap: 0.35rem; padding: 0 0.6rem; font-weight: 700; font-size: 0.9375rem; }
+.socials a.cv-link .icon { width: 1.125rem; height: 1.125rem; color: var(--accent); }
 .entry-type { line-height: 1.4; }
 .entry-title { font-family: var(--font-display); font-size: 1.1875rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.25rem; }
 .entry-org { color: var(--muted); font-size: 0.9375rem; margin-bottom: 0.75rem; }
@@ -198,7 +203,26 @@ main { padding-bottom: 4rem; }
 .site-footer { margin-top: 5rem; font-size: 0.875rem; color: var(--muted); max-width: 30rem; }
 .site-footer a { color: var(--text); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
 .site-footer a:hover { color: var(--accent); }
-.site-footer .credit { font-size: 0.75rem; margin: 0; }
+/* Key facts: three proof points at the top of About. */
+.key-facts { display: grid; gap: 0.75rem; margin: 0 0 2rem; padding: 1.25rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.key-facts li { position: relative; padding-left: 1.5rem; line-height: 1.45; }
+.key-facts li::before { content: ""; position: absolute; left: 0.3rem; top: 0.55em; width: 0.45rem; height: 0.45rem; background: var(--gold); transform: rotate(45deg); }
+.key-facts strong { font-family: var(--font-display); color: var(--text-strong); font-size: 1.125rem; font-weight: 700; margin-right: 0.35rem; }
+.key-facts span { color: var(--text); }
+
+/* Older CV entries fold under a disclosure. */
+.more { margin-top: 0.25rem; }
+.more summary {
+  display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.75rem; cursor: pointer;
+  color: var(--text-strong); font-weight: 700; list-style: none;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary::before { content: "+"; color: var(--accent); font-weight: 700; width: 1rem; }
+.more[open] summary::before { content: "−"; }
+.more summary:hover { color: var(--accent); }
+
+.detail-meta { color: var(--muted); font-size: 0.9375rem; margin-bottom: 0.5rem; }
+.detail-topics { margin-top: 2rem; }
 
 /* ── Detail + archive pages ─────────────────────────────── */
 .detail, .archive { position: relative; margin: 0 auto; padding: 3rem var(--gutter) 5rem; }
@@ -218,7 +242,7 @@ main { padding-bottom: 4rem; }
 .filters[hidden] { display: none; }
 .filters button {
   font: inherit; font-size: 0.875rem; font-weight: 500; cursor: pointer;
-  padding: 0.35rem 0.9rem; border-radius: 999px;
+  min-height: 2.75rem; padding: 0.35rem 1rem; border-radius: 999px;
   color: var(--text); background: transparent; border: 1px solid var(--line);
 }
 .filters button:hover { border-color: var(--accent); color: var(--text-strong); }
@@ -239,6 +263,14 @@ main { padding-bottom: 4rem; }
 .is-highlight .cell-title::after {
   content: ""; display: inline-block; width: 0.45rem; height: 0.45rem; margin-left: 0.5rem;
   background: var(--gold); transform: rotate(45deg); vertical-align: 0.15em;
+}
+/* Phones: stack each archive row (year above the title) instead of squeezing columns. */
+@media (max-width: 39.99rem) {
+  .archive-table thead { display: none; }
+  .archive-table tr { display: block; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .archive-table td { display: block; padding: 0; border: 0; }
+  .archive-table td.col-type { display: none; }
+  .cell-year { font-size: 0.875rem; margin-bottom: 0.25rem; }
 }
 .cell-type { color: var(--muted); font-size: 0.875rem; white-space: nowrap; }
 .col-type { display: none; }
@@ -263,7 +295,9 @@ main { padding-bottom: 4rem; }
   }
   .intro .contact { margin-top: 1rem; }
   .intro .tagline, .intro .role { max-width: 27rem; }
-  .avatar { width: clamp(5.5rem, 13vh, 8rem); height: clamp(5.5rem, 13vh, 8rem); margin-bottom: clamp(1rem, 3vh, 1.75rem); }
+  .avatar { width: clamp(4.5rem, 10vh, 6.5rem); height: clamp(4.5rem, 10vh, 6.5rem); margin-bottom: clamp(0.75rem, 2.5vh, 1.5rem); }
+  /* Desktop: the email icon covers "get in touch", so the sentence gives its space to the scene. */
+  .intro .contact-text { display: none; }
   .nav-mobile { display: none; }
   .nav-desktop { display: block; margin-top: clamp(1.25rem, 5vh, 3.5rem); }
   .nav-desktop li + li { margin-top: 0.25rem; }
@@ -293,7 +327,7 @@ main { padding-bottom: 4rem; }
   .scene figcaption { flex: none; margin-top: 0.5rem; color: var(--muted); font-size: 0.8125rem; line-height: 1.45; }
   .scene figcaption a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 2px; }
   .scene figcaption a:hover { color: var(--accent); }
-  @container (max-height: 7rem) { .scene-stack { display: none; } }
+  @container (max-height: 4.5rem) { .scene-stack { display: none; } }
 
   /* Compact state after scrolling past the top: everything in the column stays in view. */
   .fold { max-height: 8rem; overflow: hidden; }
@@ -322,6 +356,9 @@ main { padding-bottom: 4rem; }
   .socials a:hover { transform: translateY(-2px); }
   .fold, .avatar, .name, .role, .nav-desktop { transition: max-height 400ms var(--ease-out), opacity 300ms ease, margin 400ms var(--ease-out), width 400ms var(--ease-out), height 400ms var(--ease-out), font-size 400ms var(--ease-out); }
   .scene-item { transition: opacity 500ms ease, visibility 500ms; }
+  /* First scene draws itself once on page load. */
+  @keyframes draw-in { from { stroke-dashoffset: 1; fill-opacity: 0; } }
+  [data-scene="about"] path { animation: draw-in 1800ms 500ms var(--ease-out) both; }
   .nav-fill { transition: width 120ms linear; }
   .entry-title a:hover .icon-inline { transform: translate(2px, -2px); }
   .text-link:hover .icon { transform: translateX(2px); transition: transform 160ms ease; }

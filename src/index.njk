@@ -45,6 +45,13 @@ permalink: /
   <main id="content" tabindex="-1">
     <section id="about" class="section" aria-labelledby="about-heading">
       <h2 id="about-heading" class="section-heading">About</h2>
+      {%- if site.key_facts and site.key_facts.length %}
+      <ul class="key-facts" aria-label="Key facts">
+        {%- for f in site.key_facts %}
+        <li><strong>{{ f.value }}</strong> <span>{{ f.label }}</span></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
       <div class="prose">
         {% renderFile "./src/content/about.md" %}
       </div>
@@ -71,10 +78,8 @@ permalink: /
         {%- endif %}
       </div>
 
-      {%- for sec in cv.sections %}
-      <h3 class="sub-heading">{{ sec.heading }}</h3>
-      <ol class="entries">
-        {%- for job in sec.items %}
+      {#- One CV entry. Entries past `show` (default 3) per section fold into "Show N earlier". -#}
+      {%- macro cvEntry(job) %}
         <li class="entry reveal">
           <p class="entry-date">{{ job.start }}{% if job.start and job.end %} – {% endif %}{{ job.end }}</p>
           <div class="entry-body">
@@ -88,8 +93,21 @@ permalink: /
             {%- endif %}
           </div>
         </li>
-        {%- endfor %}
+      {%- endmacro %}
+      {%- for sec in cv.sections %}
+      {%- set show = sec.show or 3 %}
+      <h3 class="sub-heading">{{ sec.heading }}</h3>
+      <ol class="entries">
+        {%- for job in sec.items.slice(0, show) %}{{ cvEntry(job) }}{% endfor %}
       </ol>
+      {%- if sec.items.length > show %}
+      <details class="more">
+        <summary>Show {{ sec.items.length - show }} earlier {{ "entry" if sec.items.length - show == 1 else "entries" }}</summary>
+        <ol class="entries">
+          {%- for job in sec.items.slice(show) %}{{ cvEntry(job) }}{% endfor %}
+        </ol>
+      </details>
+      {%- endif %}
       {%- endfor %}
 
       <h3 class="sub-heading">Skills</h3>
@@ -105,8 +123,6 @@ permalink: /
 
     <footer class="site-footer">
       <p>Designed and built by {{ site.name }} in Vientiane, Lao PDR.</p>
-      {#- Required by the CC BY licence of the photo the Patuxai outline was traced from. -#}
-      <p class="credit">Patuxai outline from a <a href="https://commons.wikimedia.org/wiki/File:%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%8A%E0%B8%B1%E0%B8%A2_(%E0%B8%81%E0%B8%B3%E0%B9%81%E0%B8%9E%E0%B8%87%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%99%E0%B9%8C)_-_panoramio.jpg">photo</a> by มะเดื่อ แสลงหลวง, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
     </footer>
   </main>
 </div>

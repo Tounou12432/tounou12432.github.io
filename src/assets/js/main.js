@@ -79,7 +79,9 @@ if (!calm && "IntersectionObserver" in window) {
 
     // Reading progress on each nav line, and how much of the current scene is drawn.
     for (const a of links) a.style.setProperty("--p", progress[a.hash.slice(1)].toFixed(3));
-    if (scene) scene.style.setProperty("--draw", calm ? 1 : clamp(0.15 + progress[active] / 0.55).toFixed(3));
+    // About's scene is fully drawn from the start (it draws in on load via CSS); later scenes draw with scroll.
+    const draw = calm || active === sections[0].id ? 1 : clamp(0.15 + progress[active] / 0.55);
+    if (scene) scene.style.setProperty("--draw", draw.toFixed(3));
     root.classList.toggle("is-compact", window.scrollY > 80);
   };
 

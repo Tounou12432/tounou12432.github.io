@@ -13,5 +13,5 @@ topics: ["Youth innovation", "Project cycle", "Stakeholder coordination"]
 thumbnail: ""
 thumbnail_alt: ""
 links: []
-detail_page: false
+detail_page: true
 ---

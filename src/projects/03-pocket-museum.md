@@ -13,5 +13,5 @@ topics: ["Mental wellness", "Regional teams", "Grant management"]
 thumbnail: ""
 thumbnail_alt: ""
 links: []
-detail_page: false
+detail_page: true
 ---

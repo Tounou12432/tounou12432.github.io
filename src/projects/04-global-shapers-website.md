@@ -12,5 +12,5 @@ topics: ["Next.js", "Sanity CMS", "Content architecture"]
 thumbnail: ""
 thumbnail_alt: ""
 links: []            # [[Add the live website URL]] e.g. - { label: "Visit site", url: "https://…" }
-detail_page: false
+detail_page: true
 ---

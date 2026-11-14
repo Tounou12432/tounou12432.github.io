@@ -84,7 +84,12 @@ export default function (eleventyConfig) {
   );
 
   // Archive table rows: highlight projects + src/_data/archive.yaml, newest first.
-  const yearKey = (y = "") => (/present/i.test(y) ? 9999 : Math.max(0, ...(String(y).match(/\d{4}/g) || []).map(Number)));
+  // Newest first by start year; within a year, ongoing/later-ending items first ("present" = 9999).
+  const yearKey = (y = "") => {
+    const years = (String(y).match(/\d{4}/g) || []).map(Number);
+    const end = /present/i.test(y) ? 9999 : Math.max(0, ...years);
+    return (years[0] || 0) * 10000 + end;
+  };
   eleventyConfig.addCollection("archiveRows", (api) => {
     const projects = api.getFilteredByGlob("src/projects/*.md").filter((p) => !p.data.draft).map((p) => ({
       year: p.data.year,

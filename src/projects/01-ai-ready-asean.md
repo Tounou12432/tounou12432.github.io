@@ -15,5 +15,5 @@ topics: ["AI literacy", "Facilitation", "Programme coordination"]
 thumbnail: ""
 thumbnail_alt: ""
 links: []
-detail_page: false
+detail_page: true
 ---

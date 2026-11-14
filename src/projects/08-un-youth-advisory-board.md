@@ -12,5 +12,5 @@ topics: ["Digital transformation", "Youth participation", "Policy advice"]
 thumbnail: ""
 thumbnail_alt: ""
 links: []
-detail_page: false
+detail_page: true
 ---

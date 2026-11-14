@@ -14,6 +14,9 @@
     {%- if site.email %}
     <li><a href="mailto:{{ site.email }}" aria-label="Email {{ site.email }}" title="Email">{% icon "mail" %}</a></li>
     {%- endif %}
+    {%- if site.cv_pdf | fileExists %}
+    <li><a class="cv-link" href="/{{ site.cv_pdf }}" download>{% icon "file-down" %}<span>CV</span></a></li>
+    {%- endif %}
   </ul>
   {%- endif %}
 </div>

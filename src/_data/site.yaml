@@ -8,7 +8,16 @@ name: "Tounou Chanthavongsa"
 nickname: "Tanu"            # shown after your name; leave empty to hide
 role: "Youth Development & AI Literacy Programme Lead"
 tagline: "I design and coordinate youth programmes and AI literacy training in Lao PDR and across Southeast Asia."
-location: "Vientiane, Lao PDR"   # leave empty to hide
+location: "Vientiane, Lao PDR"
+
+# Three proof points shown at the top of About. Keep each label short.
+key_facts:
+  - value: "5,000+"
+    label: "learners trained and engaged in AI literacy"
+  - value: "UN Youth Advisory Board"
+    label: "first cohort member, Lao PDR, 2026–2028"
+  - value: "2nd Place"
+    label: "Outstanding AI Master Trainer, AI Ready ASEAN, 2026"   # leave empty to hide
 
 # Used for the <title>, search results and link previews (plain text).
 description: "Tounou Chanthavongsa: youth development and AI literacy programme lead in Lao PDR. Selected programmes, full archive and CV."
