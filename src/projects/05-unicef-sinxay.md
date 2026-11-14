@@ -3,12 +3,12 @@ order: 5
 category: Programme
 title: "Sinxay Youth Champion mentoring"
 type: "Youth mentoring"
-year: "2025–present"
+year: "2025–2026"
 org: "UNICEF Lao PDR and Lao Youth Union"
 summary: "A leadership and advocacy programme for secondary-school students."
-contribution: "Mentor and trainer. I deliver leadership and advocacy training and help students design their own community projects."
+contribution: "Mentor and trainer. I delivered leadership and advocacy training and helped students design their own community projects."
 results:
-  - "Mentoring 76 secondary students"
+  - "Mentored 76 secondary students"
 topics: ["Mentoring", "Advocacy", "Youth leadership"]
 thumbnail: ""
 thumbnail_alt: ""

@@ -141,6 +141,6 @@ skills:
   - group: "Training"
     items: ["AI literacy", "Workshop facilitation", "Youth mentoring", "Training of trainers"]
   - group: "Digital"
-    items: ["Canva", "Adobe tools", "Microsoft Office", "Google Workspace", "Web content and CMS"]
+    items: ["Canva", "Adobe tools", "Microsoft Office", "Google Workspace", "Web content and CMS", "GIS mapping"]
   - group: "Languages"
     items: ["Lao (native)", "Thai (fluent)", "English (upper-intermediate)", "Japanese (pre-intermediate)"]
