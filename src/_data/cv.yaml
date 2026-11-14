@@ -121,6 +121,10 @@ sections:
 
   - heading: "Awards"
     items:
+      - title: "Selected Participant, YSEALI Summit 2026"
+        org: "Young Southeast Asian Leaders Initiative, Manila, Philippines"
+        start: ""
+        end: "2026"
       - title: "2nd Place, Outstanding AI Master Trainer"
         org: "AI Ready ASEAN Programme, Lao PDR"
         start: ""
